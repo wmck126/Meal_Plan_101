@@ -4,7 +4,10 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <image
+        source ={{uri: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Donkey_%28Shrek%29.png/130px-Donkey_%28Shrek%29.png"}}
+        style={{width: 200, height: 200}}
+        />
       <StatusBar style="auto" />
     </View>
   );

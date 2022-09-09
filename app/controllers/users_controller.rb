@@ -18,7 +18,8 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     render json: user, status: :created
   end
 
-  def index 
+  def index
+    if 
     user = User.all
     render json: user
   end

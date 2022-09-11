@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, SafeAreaView } from 'react-native';
+import { StyleSheet, TextInput, SafeAreaView, Button } from 'react-native';
 import React, {useState} from 'react'
 
 export default function SignUp ({onLogin}){
@@ -19,8 +19,8 @@ export default function SignUp ({onLogin}){
                 passwordConfirmation: passwordConfirmation,
             }),
         })
-        .then((r) => r.json())
-        .then(onLogin)
+        .then((r) => console.log(r))
+        // .then(onLogin)
     }
     return (
         <SafeAreaView>
@@ -41,6 +41,10 @@ export default function SignUp ({onLogin}){
                 value={setPassword}
                 onChangeText={setPasswordConfirmation}
                 placeholder="Password Confirmation"
+            />
+            <Button
+                title="Sign Up"
+                onPress={handleSubmit}
             />
         </SafeAreaView>
     )

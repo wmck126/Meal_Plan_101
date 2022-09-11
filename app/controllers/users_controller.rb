@@ -9,7 +9,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    if 
     user = User.all
     render json: user
   end

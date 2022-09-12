@@ -19,7 +19,11 @@ export default function App() {
     })
   }, [])
 
-  
+  // if (!user) return (
+  //   <NavigationContainer>
+  //     <Stack.Screen name="Login" component={Login} onLogin={setUser} />
+  //   </NavigationContainer>
+  //   )
 
   return (
     <NavigationContainer>
@@ -27,6 +31,7 @@ export default function App() {
         <Stack.Screen name="Home" component={LoginSignupPage} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Login" component={Login} onLogin={setUser}/>
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

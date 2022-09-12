@@ -8,7 +8,7 @@ export default function SignUp ({onLogin}){
 
     function handleSubmit(e) {
         e.preventDefault()
-        fetch("/signup", {
+        fetch("http://127.0.0.1:3000/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -22,6 +22,9 @@ export default function SignUp ({onLogin}){
         .then((r) => console.log(r))
         // .then(onLogin)
     }
+    console.log(username)
+    console.log(password)
+    console.log(passwordConfirmation)
     return (
         <SafeAreaView>
             <TextInput

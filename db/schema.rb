@@ -48,16 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_031242) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "image_url"
     t.string "name"
-    t.integer "weight"
-    t.integer "height"
-    t.integer "carb_goal"
-    t.integer "protein_goal"
-    t.integer "fat_goal"
-    t.float "activity_level"
-    t.float "bmi"
-    t.integer "weight_goal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

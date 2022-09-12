@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import {NavigationContainer} from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginSignupPage from './Components/LoginSignupPage';
-import SignUp from './Components/Signup';
-import Login from './Components/Login';
+import LoginSignupPage from '../pages/LoginSignupPage';
+import SignUp from './Signup';
+import Login from './Login';
+import Home from '../pages/Home';
 
 const Stack = createNativeStackNavigator()
 
@@ -27,11 +28,11 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={LoginSignupPage} />
+      <Stack.Navigator initialRouteName="LoginSignup">
+        <Stack.Screen name="LoginSignup" component={LoginSignupPage} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Login" component={Login} onLogin={setUser}/>
-        
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );

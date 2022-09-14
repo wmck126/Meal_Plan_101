@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_12_031242) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_13_224100) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -37,6 +37,23 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_031242) do
     t.index ["ingredient_id"], name: "index_meals_on_ingredient_id"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string "name"
+    t.string "image_url"
+    t.integer "weight"
+    t.integer "height"
+    t.integer "carb_goal"
+    t.integer "protein_goal"
+    t.integer "fat_goal"
+    t.float "activity_level"
+    t.float "bmi"
+    t.integer "weight_goal"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "user_meals", force: :cascade do |t|
     t.integer "users_id"
     t.integer "meals_id"
@@ -48,14 +65,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_031242) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "name"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
   end
 
   add_foreign_key "meals", "courses"
   add_foreign_key "meals", "ingredients"
+  add_foreign_key "profiles", "users"
   add_foreign_key "user_meals", "meals", column: "meals_id"
   add_foreign_key "user_meals", "users", column: "users_id"
 end
